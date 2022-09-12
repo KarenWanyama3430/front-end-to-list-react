@@ -13,7 +13,7 @@ class App extends React.Component {
 
   
   componentDidMount() {
-    fetch("http://localhost:9292/tasks")
+    fetch("http://localhost:9393/tasks")
       .then((res) => res.json())
       .then((data) => this.setState({ tasks: data.tasks }));
   }
@@ -25,7 +25,7 @@ class App extends React.Component {
   };
 
   handleDelete = (deleteTask) => {
-    fetch("http://localhost:9292/tasks/" + deleteTask.id, {
+    fetch("http://localhost:9393/tasks/" + deleteTask.id, {
       method: "DELETE",
     });
 
@@ -37,7 +37,7 @@ class App extends React.Component {
   handleAddTask = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:9292/tasks", {
+    fetch("http://localhost:9393/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
